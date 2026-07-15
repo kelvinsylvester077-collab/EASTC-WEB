@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>EASTCSO</title>
+	<style>
+	* {
+		box-sizing: border-box;
+	}
+	body{
+		margin: 0;
+		background: darkblue;
+		font-family: Arial, sans-serif;
+	}
+	img {
+		max-width: 100%;
+		height: auto;
+		display: block;
+	}
+	.header {
+		display: flex;
+		justify-content: space-between;
+		text-align: center;
+		align-items: center;
+		background: blue;
+		color: white;
+		padding: 15px 30px;
+		gap: 15px;
+		flex-wrap: wrap;
+	}
+	.header-title {
+		flex: 1;
+		min-width: 220px;
+	}
+	.logo-left,
+	.logo-right {
+		flex-shrink: 0;
+	}
+	nav{background: lightblue}
+	nav ul{
+		display: flex;
+		justify-content: center;
+		list-style: none;
+		margin: 0;
+		padding: 10px;
+		flex-wrap: wrap;
+		gap: 6px;
+	}
+	nav ul li a{
+		display: block;
+		padding: 10px;
+		color: black;
+		text-decoration: none;
+		font-weight: bold;
+	}
+	.hero{
+	background: white;
+	background-size: cover;
+	background-position: center;
+	color: black;
+	text-align: center;
+	padding: 10px;
+	}
+	.services{
+		padding: 40px;
+		text-align: center;
+	}
+	.service-container{
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+		gap: 20px;
+	}
+	.service-card{
+		background: lightgreen;
+		padding: 20px;
+		border-radius: 8px;
+		box-shadow: 0 0 5px gray;
+	}
+	.title{
+		color: white;
+		text-align: center;
+	}
+	.main-container{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:20px;
+    padding:20px;
+}
+
+.main-content{
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    overflow-wrap: anywhere;
+}
+
+.sidebar{
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    overflow-wrap: anywhere;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-bottom:20px;
+}
+
+th,td{
+    padding:10px;
+    border:2px solid #000;
+}
+
+h2{
+    margin-bottom:15px;
+}
+		
+.site-footer {
+  background-color: #00008B; /* matches your navy section background */
+  color: #ffffff;
+  font-family: Georgia, 'Times New Roman', serif;
+  padding: 40px 20px 0 20px;
+  margin-top: 0;
+}
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 30px;
+}
+.footer-col {
+  flex: 1;
+  min-width: 200px;
+}
+.footer-col h3 {
+  color: #ffffff;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #90EE90; /* matches your green cards */
+  padding-bottom: 8px;
+}
+.footer-col p {
+  line-height: 1.6;
+  font-size: 0.95rem;
+  color: #dcdcdc;
+}		
+.footer-links,
+.footer-contact {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-links li,
+.footer-contact li {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  color: #dcdcdc;
+}
+.footer-links a {
+  color: #dcdcdc;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.footer-links a:hover {
+  color: #90EE90;
+  text-decoration: underline;
+}
+.footer-social {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footer-social a {
+  color: #dcdcdc;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+.footer-social a:hover {
+  color: #90EE90;
+}
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 30px;
+  padding: 15px 20px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #cccccc;
+}
+.leadership-section {
+  background-color: #eef1fb;
+  padding: 50px 30px;
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+.leadership-title {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #1a1a2e;
+}
+
+.leadership-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  max-width: 1000px;
+  margin: 0 auto;
+}		
+.leader-card {
+  background-color: #ffffff;
+  border-radius: 14px;
+  padding: 30px 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.leader-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+.leader-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 0 auto 20px auto;
+  display: block;
+  object-fit: cover;
+  border: 3px solid #d4af37; /* gold ring */
+  background-color: #16305c; /* shows behind image while it loads */
+}
+.leader-name {
+  font-size: 1.3rem;
+  color: #1a1a2e;
+  margin: 5px 0;
+}
+
+.leader-position {
+  color: #2456c9;
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 4px 0 10px 0;
+}
+
+.leader-phone {
+  color: #444444;
+  font-size: 0.9rem;
+  margin: 0;
+}
+.crud-section {
+  margin-top: 20px;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+}
+.crud-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+.crud-form {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 15px;
+  padding: 15px;
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+}
+.crud-form input,
+.crud-form textarea {
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+}
+.crud-form textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+.form-actions,
+.crud-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.form-actions button,
+.crud-actions button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.save-btn {
+  background: #2456c9;
+  color: #ffffff;
+}
+.cancel-btn,
+.delete-btn {
+  background: #c62828;
+  color: #ffffff;
+}
+.edit-btn {
+  background: #2e7d32;
+  color: #ffffff;
+}
+.crud-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+.crud-list li {
+  background: #ffffff;
+  padding: 12px 14px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+}
+.crud-list strong {
+  display: block;
+  margin-bottom: 4px;
+}
+.crud-list small {
+  display: block;
+  color: #666666;
+  margin-bottom: 4px;
+}
+@media (max-width: 900px) {
+  .main-container {
+    grid-template-columns: 1fr;
+  }
+  .service-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    padding: 15px;
+  }
+  .header img {
+    width: 90px;
+    height: 90px;
+  }
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  .service-container {
+    grid-template-columns: 1fr;
+  }
+  .main-content,
+  .sidebar,
+  .crud-section {
+    padding: 20px;
+  }
+  .leadership-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-container {
+    flex-direction: column;
+  }
+  .crud-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .form-actions,
+  .crud-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .form-actions button,
+  .crud-actions button {
+    width: 100%;
+  }
+}
+	</style>
+</head>
+<body>
+	<header class="header">
+		<!--EASTC logo-->
+		<div class="logo-left">
+			<img src="EASTC.PNG" width="130px" height="130px"> 
+		</div>
+		<div class="header-title">
+			<h2>Eastern Africa Statistical Training Centre (EASTC)</h2>
+			<h1>Eastern Africa Statistical Training Centre Students Organization (EASTCSO)</h1>
+			<p>Serving Students Through Students Achieving Exellence </p>
+		</div>
+		<div class="logo-right">
+			<img src="eastcs.jfif" width="130px" height="130px">
+			
+		</div>
+	</header>
+	<nav>
+		<ul>
+			<li><a href="#home">Home</a></li>
+			<li><a href="#about">About</a></li>
+			<li><a href="#leadership">Leadership</a></li>
+			<li><a href="#services">Services</a></li>
+			<li><a href="#events">Events</a></li>
+			<li><a href="#announcements">Announcements</a></li>
+			<li><a href="#contacts">Contacts</a></li>
+
+		</ul>
+	</nav>
+	<section id="home" class="hero">
+		<h1>welcome to EASTCSO</h1>
+		<p>Empowering students through leadership, Innovation, Acadenic exellence, and Community engagement.</p>
+		</section>
+		<section id="services" class="card">
+			<h2 class="title">Student Services</h2>
+			<div class="service-container">
+			<div class="service-card">
+				<h3>Academic Support</h3>
+				<p>Tutarials and learninng assistance.</p>
+			</div>
+			<div class="service-card">
+				<h3>Sports and entartainment</h3>
+				<p>promoting physical fitness and teamwork</p>
+			</div>
+			<div class="service-card">
+				<h3>Career Guidance</h3>
+				<p>Helping students prepare for employment</p>
+			</div>
+			<div class="service-card">
+				<h3>Students welfare</h3>
+				<p>Supporting student welfare and success</p>
+			</div>
+		</div>
+
+
+	<section class="main-container">
+
+    <!-- MAIN CONTENT (2fr) -->
+    <main class="main-content">
+    <section id="about" class="card">
+    		<div class="main-content">
+    			<h2>About</h2>
+    			<p>The EASTC Students Organization (EASTCSO) represents and serves all students
+          at the Eastern Africa Statistical Training Centre. We coordinate student
+          activities, organize events, share important announcements, and act as a
+          bridge of communication between students and the College administration.</p>
+    		</div>
+    		<table class="info-table">
+          <thead>
+            <tr><th>Aspect</th><th>Details</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Mission</td><td>To represent student interests and enhance campus life</td></tr>
+            <tr><td>Vision</td><td>An empowered, united, and active student community</td></tr>
+            <tr><td>Founded</td><td>Operates each academic year through elected leadership</td></tr>
+            <tr><td>Membership</td><td>Open to all registered EASTC students</td></tr>
+          </tbody>
+        </table>
+    </section>
+    <section id="leadership" class="card">
+
+        <h2>Student Leadership</h2>
+
+        <div class="leadership-grid">
+
+    <!-- Card 1 -->
+    <div class="leader-card">
+      <img src="PRESD.jpg" class="leader-avatar" alt="Khadija T. Ngombo">
+      <h3 class="leader-name">Khadija T. Ngombo</h3>
+      <p class="leader-position">President</p>
+      <p class="leader-phone">+255 711 000 001</p>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="leader-card">
+      <img src="VICE.jpg" class="leader-avatar" alt="Baraka N. Swai">
+      <h3 class="leader-name">Baraka N. Swai</h3>
+      <p class="leader-position">Vice President</p>
+      <p class="leader-phone">+255 711 000 002</p>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="leader-card">
+      <img src="secrt.jpg" class="leader-avatar" alt="Tumaini Hosea">
+      <h3 class="leader-name">Tumaini Hosea</h3>
+      <p class="leader-position">Secretary General</p>
+      <p class="leader-phone">+255 711 000 003</p>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="leader-card">
+      <img src="treas.jpg" class="leader-avatar" alt="Steven Ladslaus">
+      <h3 class="leader-name">Steven Ladslaus</h3>
+      <p class="leader-position">Treasurer</p>
+      <p class="leader-phone">+255 711 000 004</p>
+    </div>
+
+        
+    </section>
+    <section id="events" class="crud-section">
+      <div class="crud-header">
+        <h2>Upcoming Events</h2>
+        <button type="button" class="save-btn" onclick="resetEventForm()">Add Event</button>
+      </div>
+
+      <form id="events-form" class="crud-form">
+        <input type="hidden" id="event-id">
+        <input type="text" id="event-title" placeholder="Event title" required>
+        <input type="text" id="event-date" placeholder="Date or time">
+        <textarea id="event-description" placeholder="Event details"></textarea>
+        <div class="form-actions">
+          <button type="submit" class="save-btn">Save Event</button>
+          <button type="button" class="cancel-btn" onclick="resetEventForm()">Cancel</button>
+        </div>
+      </form>
+
+      <ul id="events-list" class="crud-list"></ul>
+    </section>
+
+    </main>
+    
+
+    <!-- SIDEBAR (1fr) -->
+    <aside id="announcements" class="sidebar">
+
+        <div class="crud-header">
+          <h2>Announcements</h2>
+          <button type="button" class="save-btn" onclick="resetAnnouncementForm()">Add</button>
+        </div>
+
+        <form id="announcements-form" class="crud-form">
+          <input type="hidden" id="announcement-id">
+          <input type="text" id="announcement-title" placeholder="Announcement title" required>
+          <textarea id="announcement-description" placeholder="Announcement details"></textarea>
+          <div class="form-actions">
+            <button type="submit" class="save-btn">Save</button>
+            <button type="button" class="cancel-btn" onclick="resetAnnouncementForm()">Cancel</button>
+          </div>
+        </form>
+
+        <ul id="announcements-list" class="crud-list"></ul>
+
+    </aside>
+
+</section>
+<footer id="contacts">
+	<div class="footer-container">
+
+    <!-- Column 1: About / Logo -->
+    <div class="footer-col">
+      <h3>EASTCSO</h3>
+      <p>Eastern Africa Statistical Training Centre Students Organization. Serving Students Through Students, Achieving Excellence.</p>
+    </div>
+
+    <!-- Column 2: Quick Links -->
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#leadership">Leadership</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#announcements">Announcements</a></li>
+        <li><a href="#contacts">Contacts</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 3: Contact Info -->
+    <div class="footer-col">
+      <h3>Contact Us</h3>
+      <ul class="footer-contact">
+        <li>EASTC Campus, Dar es Salaam, Tanzania</li>
+        <li>Email: eastcso@eastc.ac.tz</li>
+        <li>Phone: +255 700 000 000</li>
+      </ul>
+    </div>
+
+    <!-- Column 4: Social Media -->
+    <div class="footer-col">
+      <h3>Follow Us</h3>
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook">Facebook</a>
+        <a href="#" aria-label="Instagram">Instagram</a>
+        <a href="#" aria-label="Twitter/X">Twitter</a>
+      </div>
+    </div>
+
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 EASTCSO — Eastern Africa Statistical Training Centre Students Organization. All Rights Reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
